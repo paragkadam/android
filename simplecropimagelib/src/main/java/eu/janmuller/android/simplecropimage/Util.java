@@ -18,7 +18,11 @@ package eu.janmuller.android.simplecropimage;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Rect;
 import android.os.Handler;
 import android.view.Surface;
 
@@ -148,9 +152,9 @@ public class Util {
             extends MonitoredActivity.LifeCycleAdapter implements Runnable {
 
         private final MonitoredActivity mActivity;
-        private final ProgressDialog    mDialog;
-        private final Runnable          mJob;
-        private final Handler           mHandler;
+        private final ProgressDialog mDialog;
+        private final Runnable mJob;
+        private final Handler mHandler;
         private final Runnable mCleanupRunner = new Runnable() {
             public void run() {
 
